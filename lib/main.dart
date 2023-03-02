@@ -26,30 +26,38 @@ class _MyAppState extends State<MyApp> {
             title: const Text('App name'),
           ),
           body: Center(
-            child: SizedBox(
-              width: 400,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        buttonname = 'Done';
-                      });
-                    },
-                    child: Text(buttonname),
-                  ),
-                  ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          buttonname = 'Done';
-                        });
-                      },
-                      child: Text(buttonname))
-                ],
-              ),
-            ),
+            child: currentIndex == 0
+                ? Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    color: Color.fromARGB(255, 56, 214, 170),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            onPrimary: Color.fromARGB(255, 58, 0, 40),
+                            primary: Color.fromARGB(255, 255, 83, 21),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              buttonname = 'Done';
+                            });
+                          },
+                          child: Text(buttonname),
+                        ),
+                        ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                buttonname = 'Done';
+                              });
+                            },
+                            child: Text(buttonname))
+                      ],
+                    ),
+                  )
+                : const SizedBox(),
           ),
           bottomNavigationBar: BottomNavigationBar(
             items: const [
