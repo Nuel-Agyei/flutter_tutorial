@@ -30,15 +30,15 @@ class _MyAppState extends State<MyApp> {
                 ? Container(
                     width: double.infinity,
                     height: double.infinity,
-                    color: Color.fromARGB(255, 56, 214, 170),
+                    color: Color.fromARGB(94, 97, 97, 97),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            onPrimary: Color.fromARGB(255, 58, 0, 40),
-                            primary: Color.fromARGB(255, 255, 83, 21),
+                            foregroundColor: Color.fromARGB(255, 24, 17, 22),
+                            backgroundColor: Color.fromARGB(255, 255, 255, 255),
                           ),
                           onPressed: () {
                             setState(() {
@@ -57,13 +57,13 @@ class _MyAppState extends State<MyApp> {
                       ],
                     ),
                   )
-                : const SizedBox(),
+                : Image.asset('images/coms2.jpg'),
           ),
           bottomNavigationBar: BottomNavigationBar(
             items: const [
               BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
               BottomNavigationBarItem(
-                  label: 'Settings', icon: Icon(Icons.home)),
+                  label: 'Settings', icon: Icon(Icons.settings)),
             ],
             currentIndex: currentIndex,
             onTap: (int index) {
