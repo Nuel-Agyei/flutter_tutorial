@@ -22,57 +22,60 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Title Bar'),
-            leading: Icon(Icons.menu),
-          ),
-          body: Center(
-            child: currentIndex == 0
-                ? Container(
-                    width: double.infinity,
-                    height: double.infinity,
-                    color: Color.fromARGB(94, 97, 97, 97),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            foregroundColor: Color.fromARGB(255, 24, 17, 22),
-                            backgroundColor: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              buttonname = 'Done';
-                            });
-                          },
-                          child: Text(buttonname),
+        appBar: AppBar(
+          title: const Text('Title Bar'),
+          leading: Icon(Icons.menu),
+        ),
+        body: Center(
+          child: currentIndex == 0
+              ? Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  color: Color.fromARGB(94, 97, 97, 97),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Color.fromARGB(255, 24, 17, 22),
+                          backgroundColor: Color.fromARGB(255, 255, 255, 255),
                         ),
-                        ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                buttonname = 'Done';
-                              });
-                            },
-                            child: Text(buttonname))
-                      ],
-                    ),
-                  )
-                : Image.asset('images/coms2.jpg'),
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            items: const [
-              BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
-              BottomNavigationBarItem(
-                  label: 'Settings', icon: Icon(Icons.settings)),
-            ],
-            currentIndex: currentIndex,
-            onTap: (int index) {
-              setState(() {
-                currentIndex = index;
-              });
-            },
-          )),
+                        onPressed: () {
+                          setState(() {
+                            buttonname = 'Done';
+                          });
+                        },
+                        child: Text(buttonname),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(route);
+                          setState(() {
+                            buttonname = 'Done';
+                          });
+                        },
+                        child: const Text('Next page'),
+                      )
+                    ],
+                  ),
+                )
+              : Image.asset('images/coms2.jpg'),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
+            BottomNavigationBarItem(
+                label: 'Settings', icon: Icon(Icons.settings)),
+          ],
+          currentIndex: currentIndex,
+          onTap: (int index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+        ),
+      ),
     );
   }
 }
