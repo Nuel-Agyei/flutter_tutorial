@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
                         onPressed: () {
                           Navigator.of(context).push(route);
                           setState(() {
-                            buttonname = 'Done';
+                            buttonname = 'Collect';
                           });
                         },
                         child: const Text('Next page'),
