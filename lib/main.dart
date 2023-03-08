@@ -50,7 +50,8 @@ class _MyAppState extends State<MyApp> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context).push(route);
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: () {}));
                           setState(() {
                             buttonname = 'Collect';
                           });
@@ -76,6 +77,17 @@ class _MyAppState extends State<MyApp> {
           },
         ),
       ),
+    );
+  }
+}
+
+class Nextpage extends StatelessWidget {
+  const Nextpage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
     );
   }
 }
