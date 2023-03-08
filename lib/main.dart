@@ -23,7 +23,8 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
-            title: const Text('App name'),
+            title: const Text('Title Bar'),
+            leading: Icon(Icons.menu),
           ),
           body: Center(
             child: currentIndex == 0
