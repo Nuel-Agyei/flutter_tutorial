@@ -50,8 +50,11 @@ class _MyAppState extends State<MyApp> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: () {}));
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) => Nextpage(),
+                            ),
+                          );
                           setState(() {
                             buttonname = 'Collect';
                           });
